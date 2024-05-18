@@ -466,6 +466,7 @@ MonoBehaviour:
   levels: 30
   radius: 2.3
   verticalSpacing: 1
+  camerafollow: {fileID: 963194229}
 --- !u!4 &1071553565
 Transform:
   m_ObjectHideFlags: 0

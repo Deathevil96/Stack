@@ -128,6 +128,7 @@ public class TowerGenerator : MonoBehaviour
     public float verticalSpacing = 2.0f;
     private Dictionary<int, List<GameObject>> platformsByLevel = new Dictionary<int, List<GameObject>>();
     private List<GameObject> platformPool = new List<GameObject>();
+    [SerializeField] private CamerFollow camerafollow;
 
     void Awake()
     {
@@ -228,7 +229,7 @@ public class TowerGenerator : MonoBehaviour
             List<GameObject> highestLevelPlatforms = platformsByLevel[highestLevelIndex];
             GameObject firstPlatform = highestLevelPlatforms[0];
             Vector3 spawnPosition = firstPlatform.transform.position + new Vector3(0, 1, 0); // Offset player slightly above the platform
-            Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
+            camerafollow.player = Instantiate(playerPrefab, spawnPosition, Quaternion.identity).transform;
         }
     }
 }
